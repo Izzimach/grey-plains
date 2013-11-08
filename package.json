@@ -14,5 +14,5 @@
     "grunt-browserify": "~1.2.11",
     "grunt-contrib-watch": "~0.5.3"
   },
-  "license": "BSD"
+  "license": "MIT"
 }
