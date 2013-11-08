@@ -17,7 +17,7 @@ MainMenu.prototype = {
 		//this.music = this.add.audio('titleMusic');
 		//this.music.play();
 
-		this.add.sprite(0, 0, 'titlepage');
+		//this.add.sprite(0, 0, 'titlepage');
 
 		//this.playButton = this.add.button(400, 600, 'playButton', this.startGame, this, 'buttonOver', 'buttonOut', 'buttonOver');
 

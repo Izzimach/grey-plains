@@ -6,8 +6,9 @@ Boot.prototype = {
 	preload: function () {
 
 		//	Here we load the assets required for our preloader (in this case a background and a loading bar)
-		this.load.image('preloaderBackground', 'assets/images/cactuar.png');
-		this.load.image('preloaderBar', 'assets/images/cactuar.png');
+		//this.load.image('preloaderBackground', 'assets/images/cactuar.png');
+		//this.load.image('preloaderBackground', 'assets/images/cactuar.png');
+		this.load.image('argh', 'assets/images/cactuar.png');
 
 	},
 
@@ -40,11 +41,11 @@ Boot.prototype = {
 
 	    //	By this point the preloader assets have loaded to the cache, we've set the game settings
 	    //	So now let's start the real preloader going
-		this.game.state.start('Preloader');
+		this.game.state.start('Game');
 
 	}
 
 };
 
-exports = Boot;
+module.exports = Boot;
 
