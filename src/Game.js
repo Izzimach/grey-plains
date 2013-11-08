@@ -29,7 +29,24 @@ Game.prototype = {
 	create: function () {
 
 		//	Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
-        var mummy = this.game.add.sprite(300,200,'argh');
+        //var mummy = this.game.add.sprite(300,200,'argh');
+
+        var tileset = this.game.add.tileset('maptiles');
+        var tilemap = this.game.add.tilemap();
+
+        var mapwidth = 20;
+        var mapheight = 20;
+
+        tilemap.create('argh',mapwidth, mapheight);
+        tilemap.setLayer(0);
+        tilemap.putTile(1,0,0);
+        tilemap.putTile(2,1,0);
+        tilemap.putTile(1,2,0);
+        tilemap.calculateIndexes();
+        tilemap.dump();
+
+        var layer = this.game.add.tilemapLayer(0,0,mapwidth * tileset.tileWidth, mapheight * tileset.tileHeight, tileset,tilemap,0);
+
 	},
 
 	update: function () {
