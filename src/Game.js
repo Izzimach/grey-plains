@@ -24,6 +24,13 @@ Game = function (game) {
 
 };
 
+function GetWidthHeight(tilemap)
+{
+    var width = tilemap.layers[tilemap.currentLayer].width;
+    var height = tilemap.layers[tilemap.currentLayer].height;
+
+    return [width, height];    
+}
 Game.prototype = {
 
 	create: function () {
@@ -39,10 +46,9 @@ Game.prototype = {
 
         tilemap.create('argh',mapwidth, mapheight);
         tilemap.setLayer(0);
-        tilemap.putTile(1,0,0);
-        tilemap.putTile(2,1,0);
-        tilemap.putTile(1,2,0);
-        tilemap.calculateIndexes();
+        this.generateBasicMap(tilemap);
+
+        tilemap.setLayer(0);
         tilemap.dump();
 
         var layer = this.game.add.tilemapLayer(0,0,mapwidth * tileset.tileWidth, mapheight * tileset.tileHeight, tileset,tilemap,0);
@@ -63,7 +69,26 @@ Game.prototype = {
 		//	Then let's go back to the main menu.
 		//this.game.state.start('MainMenu');
 
-	}
+	},
+
+    generateBasicMap: function (tilemap)
+    {
+        var wh = GetWidthHeight(tilemap);
+        var width = wh[0];
+        var height = wh[1];
+
+        // set all tiles to some reasonable default
+        for (var ix=0; ix < width; ix++)
+        {
+             for (var iy=0; iy < height; iy++)
+             {
+                var tileindex = this.game.rnd.integerInRange(1,4);
+                tilemap.putTile(tileindex,ix,iy);
+             }
+        }
+        tilemap.calculateIndexes();
+    }
+
 
 };
 
