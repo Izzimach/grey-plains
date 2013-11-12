@@ -1,4 +1,12 @@
 
+function GetWidthHeight(/* Phaser.Tilemap */ tilemap)
+{
+    var width = tilemap.layers[tilemap.currentLayer].width;
+    var height = tilemap.layers[tilemap.currentLayer].height;
+
+    return [width, height];    
+}
+
 MapManager = function(game, mapwidth, mapheight, tileset) {
     this.game = game;
     this.tileset = tileset;
@@ -17,14 +25,6 @@ MapManager = function(game, mapwidth, mapheight, tileset) {
     this.worldmap.fixedToCamera = false;
     this.worldmap.resizeWorld();
 };
-
-function GetWidthHeight(tilemap)
-{
-    var width = tilemap.layers[tilemap.currentLayer].width;
-    var height = tilemap.layers[tilemap.currentLayer].height;
-
-    return [width, height];    
-}
 
 MapManager.prototype = {
 
@@ -45,7 +45,6 @@ MapManager.prototype = {
         }
         tilemap.calculateIndexes();
     }
-
 
 };
 

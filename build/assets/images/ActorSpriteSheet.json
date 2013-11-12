@@ -1,11 +1,19 @@
 {"frames": [
 
 {
-	"filename": "PlayerSpriteStand.png",
-	"frame": {"x":2,"y":2,"w":22,"h":28},
+	"filename": "BlasterPistol.png",
+	"frame": {"x":2,"y":2,"w":32,"h":32},
 	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":6,"y":3,"w":22,"h":28},
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "PlayerSpriteStand.png",
+	"frame": {"x":2,"y":36,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
 	"sourceSize": {"w":32,"h":32}
 }],
 "meta": {
@@ -13,8 +21,8 @@
 	"version": "1.0",
 	"image": "ActorSpriteSheet.png",
 	"format": "RGBA8888",
-	"size": {"w":32,"h":32},
+	"size": {"w":64,"h":128},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:0f5a04a8a392713a54032f5851edf721:19ce90851e9666769a59ba7caafa4b2b:fb20c8d6e26b618fe3f5e5f331500f2f$"
+	"smartupdate": "$TexturePacker:SmartUpdate:ee183a847a0ece8aa20d016456e4260e:2e0c78b09621d8692d7905d792780641:fb20c8d6e26b618fe3f5e5f331500f2f$"
 }
 }
