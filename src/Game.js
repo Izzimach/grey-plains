@@ -1,4 +1,6 @@
 
+var MapManager = require('./MapManager');
+
 Game = function (game) {
 
 	//	When a State is added to Phaser it automatically has the following properties set on it, even if they already exist:
@@ -24,42 +26,63 @@ Game = function (game) {
 
 };
 
-function GetWidthHeight(tilemap)
-{
-    var width = tilemap.layers[tilemap.currentLayer].width;
-    var height = tilemap.layers[tilemap.currentLayer].height;
-
-    return [width, height];    
-}
 Game.prototype = {
 
 	create: function () {
 
-		//	Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
-        //var mummy = this.game.add.sprite(300,200,'argh');
-
         var tileset = this.game.add.tileset('maptiles');
-        var tilemap = this.game.add.tilemap();
+        tileset.setCollision(7,true,true,true,true);
+        tileset.setCollision(6,true,true,true,true);
 
-        var mapwidth = 20;
-        var mapheight = 20;
+        this.worldmap = new MapManager(this.game, 40,40, tileset);
 
-        tilemap.create('argh',mapwidth, mapheight);
-        tilemap.setLayer(0);
-        this.generateBasicMap(tilemap);
+        var player = this.game.add.sprite(100,100,'actorspritesheet', 'PlayerSpriteStand.png');
+        //player.animations.add('stand', [1]);
+        //player.animations.play('stand');
+        player.frameName = 'PlayerSpriteStand.png';
+        player.anchor.setTo(0.5,0.5);
+        player.body.collideWorldBounds = true;
+        player.body.setSize(20,28,6,2);
 
-        tilemap.setLayer(0);
-        tilemap.dump();
+        this.player = player;
+        this.game.camera.follow(this.player);
 
-        var layer = this.game.add.tilemapLayer(0,0,mapwidth * tileset.tileWidth, mapheight * tileset.tileHeight, tileset,tilemap,0);
-
+        this.cursors = this.game.input.keyboard.createCursorKeys();
 	},
 
 	update: function () {
 
 		//	Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
 
+        this.game.physics.collide(this.player, this.worldmap);
+
+        this.player.body.velocity.x = 0;
+        this.player.body.velocity.y = 0;
+
+        if (this.cursors.up.isDown)
+        {
+            this.player.body.velocity.y = -100;
+        }
+        if (this.cursors.down.isDown)
+        {
+            this.player.body.velocity.y = +100;
+        }
+        if (this.cursors.left.isDown)
+        {
+            this.player.body.velocity.x = -100;
+        }
+        if (this.cursors.right.isDown)
+        {
+            this.player.body.velocity.x = +100;
+        }
 	},
+
+    render: function () {
+            this.game.debug.renderCameraInfo(this.game.camera, 32, 32);
+            this.game.debug.renderSpriteCorners(this.player);
+            //this.game.debug.renderSpriteCollision(this.player, 32, 320);
+
+    },
 
 	quitGame: function (pointer) {
 
@@ -69,26 +92,7 @@ Game.prototype = {
 		//	Then let's go back to the main menu.
 		//this.game.state.start('MainMenu');
 
-	},
-
-    generateBasicMap: function (tilemap)
-    {
-        var wh = GetWidthHeight(tilemap);
-        var width = wh[0];
-        var height = wh[1];
-
-        // set all tiles to some reasonable default
-        for (var ix=0; ix < width; ix++)
-        {
-             for (var iy=0; iy < height; iy++)
-             {
-                var tileindex = this.game.rnd.integerInRange(1,4);
-                tilemap.putTile(tileindex,ix,iy);
-             }
-        }
-        tilemap.calculateIndexes();
-    }
-
+	}
 
 };
 
