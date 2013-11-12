@@ -48,11 +48,19 @@ Game.prototype = {
         this.game.camera.follow(this.player);
 
         this.cursors = this.game.input.keyboard.createCursorKeys();
+
+        var HUDlayer = new Phaser.Group(this.game, null, 'HUD', true);
+        HUDlayer.z = 4;
+        this.titletext = new Phaser.BitmapText(this.game, 50, 30, 'not here in the castle!', { font: '32px Tabasco', align: 'center'});
+        HUDlayer.add(this.titletext);
+
+        Phaser.xgame = this.game;
 	},
 
 	update: function () {
 
-		//	Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
+        // force HUD group to not scroll
+
 
         this.game.physics.collide(this.player, this.worldmap);
 

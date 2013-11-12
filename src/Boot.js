@@ -10,6 +10,8 @@ Boot.prototype = {
 		//this.load.image('preloaderBackground', 'assets/images/cactuar.png');
 		this.load.tileset('maptiles', 'assets/images/MapSprites.png', 32, 32);
 		this.load.atlas('actorspritesheet', 'assets/images/ActorSpriteSheet.png', 'assets/images/ActorSpriteSheet.json');
+
+		this.load.bitmapFont('Tabasco', 'assets/fonts/SystemFont_0.png', 'assets/fonts/SystemFont.fnt');
 	},
 
 	create: function () {
