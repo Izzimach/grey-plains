@@ -1,5 +1,8 @@
 
 var MapManager = require('./MapManager');
+var Item = require('./Item');
+var ItemLibrary = require('./ItemLibrary');
+var InventoryWindow = require('./InventoryWindow');
 
 Game = function (game) {
 
@@ -51,8 +54,14 @@ Game.prototype = {
 
         var HUDlayer = new Phaser.Group(this.game, null, 'HUD', true);
         HUDlayer.z = 4;
+
         this.titletext = new Phaser.BitmapText(this.game, 50, 30, 'not here in the castle!', { font: '32px Tabasco', align: 'center'});
-        HUDlayer.add(this.titletext);
+        this.inventory = new InventoryWindow(this.game, HUDlayer);
+
+        //HUDlayer.add(this.titletext);
+
+        this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[2]));
+        this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[3]));
 
         Phaser.xgame = this.game;
 	},

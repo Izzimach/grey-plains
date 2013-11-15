@@ -1,7 +1,7 @@
 
 Item = function(game, itemdata) {
     
-    Phaser.Sprite.call(this, game, game.world.randomX, game.world.randomY, 'actorspritesheet', itemdata.spritename);
+    Phaser.Sprite.call(this, game, 0,0, 'actorspritesheet', itemdata.spritename);
 
     this.itemdata = itemdata;
 
@@ -13,9 +13,9 @@ Item.prototype.constructor = Item;
 
 _.extend(Item.prototype, {
     update: function() {
-
+        
     }
-
 
 });
 
+module.exports = Item;
