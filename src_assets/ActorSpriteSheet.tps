@@ -168,6 +168,16 @@
         <array>
             <filename>PlayerSpriteStand.png</filename>
             <filename>BlasterPistol.png</filename>
+            <filename>BigClub.png</filename>
+            <filename>FlameHamster.png</filename>
+            <filename>Lockpicks.png</filename>
+            <filename>FloatingEye.png</filename>
+            <filename>VibroKey.png</filename>
+            <filename>CarJack.png</filename>
+            <filename>GammaBunny.png</filename>
+            <filename>KineticField.png</filename>
+            <filename>SquareFrame.png</filename>
+            <filename>DialogFrame.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

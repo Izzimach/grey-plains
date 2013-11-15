@@ -1,7 +1,7 @@
 {"frames": [
 
 {
-	"filename": "BlasterPistol.png",
+	"filename": "BigClub.png",
 	"frame": {"x":2,"y":2,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -9,8 +9,88 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "PlayerSpriteStand.png",
+	"filename": "BlasterPistol.png",
+	"frame": {"x":36,"y":2,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "CarJack.png",
+	"frame": {"x":70,"y":2,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "DialogFrame.png",
 	"frame": {"x":2,"y":36,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "FlameHamster.png",
+	"frame": {"x":36,"y":36,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "FloatingEye.png",
+	"frame": {"x":70,"y":36,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "GammaBunny.png",
+	"frame": {"x":2,"y":70,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "KineticField.png",
+	"frame": {"x":36,"y":70,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "Lockpicks.png",
+	"frame": {"x":70,"y":70,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "PlayerSpriteStand.png",
+	"frame": {"x":2,"y":104,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "SquareFrame.png",
+	"frame": {"x":36,"y":104,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "VibroKey.png",
+	"frame": {"x":70,"y":104,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
@@ -21,8 +101,8 @@
 	"version": "1.0",
 	"image": "ActorSpriteSheet.png",
 	"format": "RGBA8888",
-	"size": {"w":64,"h":128},
+	"size": {"w":128,"h":256},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:ee183a847a0ece8aa20d016456e4260e:2e0c78b09621d8692d7905d792780641:fb20c8d6e26b618fe3f5e5f331500f2f$"
+	"smartupdate": "$TexturePacker:SmartUpdate:9884fff5873709beacab91b4d4681bcf:b376eb1ad022092d8379af654c94d2d5:fb20c8d6e26b618fe3f5e5f331500f2f$"
 }
 }
