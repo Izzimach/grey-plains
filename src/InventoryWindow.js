@@ -21,7 +21,7 @@ InventoryWindow = function(game) {
 InventoryWindow.prototype = Object.create(Phaser.Group.prototype);
 InventoryWindow.prototype.constructor = InventoryWindow;
 
-_.extend(InventoryWindow.prototype, {
+Phaser.Utils.extend(InventoryWindow.prototype, {
     addItem: function (item) {
         this.items.push(item);
         this.inventorygroup.add(item);
