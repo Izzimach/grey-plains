@@ -49,7 +49,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "GammaBunny.png",
+	"filename": "GammaCapybara.png",
 	"frame": {"x":2,"y":70,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -103,6 +103,6 @@
 	"format": "RGBA8888",
 	"size": {"w":128,"h":256},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:9884fff5873709beacab91b4d4681bcf:b376eb1ad022092d8379af654c94d2d5:fb20c8d6e26b618fe3f5e5f331500f2f$"
+	"smartupdate": "$TexturePacker:SmartUpdate:6be62e367af3c7c06c0addb6b639513b:0f681510086a905bee98e2f1084c6dfe:fb20c8d6e26b618fe3f5e5f331500f2f$"
 }
 }
