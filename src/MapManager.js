@@ -21,9 +21,11 @@ MapManager = function(game, mapwidth, mapheight, tileset) {
     tilemap.setLayer(0);
     tilemap.dump();
 
-    this.worldmap = this.game.add.tilemapLayer(0,0,mapwidth * tileset.tileWidth, mapheight * tileset.tileHeight, tileset,tilemap,0);
-    this.worldmap.fixedToCamera = false;
-    this.worldmap.resizeWorld();
+    this.tilelayer = this.game.add.tilemapLayer(0,0,mapwidth * tileset.tileWidth, mapheight * tileset.tileHeight, tileset,tilemap,0);
+    this.tilelayer.fixedToCamera = false;
+    this.tilelayer.resizeWorld();
+
+    this.tilemap = tilemap;
 };
 
 MapManager.prototype = {
@@ -39,7 +41,7 @@ MapManager.prototype = {
         {
              for (var iy=0; iy < height; iy++)
              {
-                var tileindex = this.game.rnd.integerInRange(1,6);
+                var tileindex = this.game.rnd.integerInRange(1,8);
                 tilemap.putTile(tileindex,ix,iy);
              }
         }

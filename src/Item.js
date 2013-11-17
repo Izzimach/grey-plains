@@ -2,8 +2,6 @@
 // show tooltips if the pointer hovers for this amount of time
 var TOOLTIPMS = 500;
 
-
-
 // need to split the description into lines of a given maximum length
 function partitiontext(text, linelength)
 {

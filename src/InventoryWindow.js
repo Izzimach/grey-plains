@@ -3,9 +3,9 @@ var INVENTORYX = 20;
 var INVENTORYY = 20;
 var ITEMSPACING = 40;
 
-InventoryWindow = function(game) {
+InventoryWindow = function(game, hudgroup) {
     this.game = game;
-    this.inventorygroup = new Phaser.Group(game, null, 'InventoryScreen', true);
+    Phaser.Group.call(this, game, hudgroup, 'InventoryScreen', true);
 
     var inventoryframe = new Phaser.Sprite(this.game, INVENTORYX, INVENTORYY, 'actorspritesheet','DialogFrame.png');
     inventoryframe.scale.setTo(
@@ -13,7 +13,7 @@ InventoryWindow = function(game) {
         (ITEMSPACING*2)/32
         );
 
-    this.inventorygroup.add(inventoryframe);
+    this.add(inventoryframe);
 
     this.items = [];
 }
@@ -24,14 +24,14 @@ InventoryWindow.prototype.constructor = InventoryWindow;
 Phaser.Utils.extend(InventoryWindow.prototype, {
     addItem: function (item) {
         this.items.push(item);
-        this.inventorygroup.add(item);
+        this.add(item);
         this.updateLayout();
     },
 
     removeItem: function(item) {
         var itemindex = this.items.indexOf(item);
         this.items.splice(itemindex,1);
-        this.inventorygroup.remove(item);
+        this.remove(item);
         this.updateLayout();
     },
 

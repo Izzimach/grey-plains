@@ -174,10 +174,11 @@
             <filename>FloatingEye.png</filename>
             <filename>VibroKey.png</filename>
             <filename>CarJack.png</filename>
-            <filename>GammaBunny.png</filename>
             <filename>KineticField.png</filename>
             <filename>SquareFrame.png</filename>
             <filename>DialogFrame.png</filename>
+            <filename>GammaCapybara.png</filename>
+            <filename>AncientLockbox.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

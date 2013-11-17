@@ -3,6 +3,7 @@ var MapManager = require('./MapManager');
 var Item = require('./Item');
 var ItemLibrary = require('./ItemLibrary');
 var InventoryWindow = require('./InventoryWindow');
+var AncientLockboxScene = require('./AncientLockboxScene');
 
 Game = function (game) {
 
@@ -39,7 +40,9 @@ Game.prototype = {
 
         this.worldmap = new MapManager(this.game, 40,40, tileset);
 
-        var player = this.game.add.sprite(100,100,'actorspritesheet', 'PlayerSpriteStand.png');
+        this.game.interactablegroup = this.game.add.group(this.game.world,'Interactables');
+
+        var player = this.game.add.sprite(100,200,'actorspritesheet', 'PlayerSpriteStand.png');
         //player.animations.add('stand', [1]);
         //player.animations.play('stand');
         player.frameName = 'PlayerSpriteStand.png';
@@ -54,6 +57,7 @@ Game.prototype = {
 
         var HUDlayer = new Phaser.Group(this.game, null, 'HUD', true);
         HUDlayer.z = 4;
+        this.game.HUDlayer = HUDlayer;
 
         this.titletext = new Phaser.BitmapText(this.game, 50, 30, 'not here in the castle!', { font: '32px Tabasco', align: 'center'});
         this.inventory = new InventoryWindow(this.game, HUDlayer);
@@ -63,6 +67,8 @@ Game.prototype = {
         this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[2]));
         this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[3]));
 
+        AncientLockboxScene.CreateScene(this.game,300,300,100);
+
         Phaser.xgame = this.game;
 	},
 
@@ -70,8 +76,8 @@ Game.prototype = {
 
         // force HUD group to not scroll
 
-
-        this.game.physics.collide(this.player, this.worldmap);
+        this.game.physics.collide(this.player, this.worldmap.tilelayer);
+        this.game.physics.collide(this.player, this.game.interactablegroup, this.interactcallback, null, this);
 
         this.player.body.velocity.x = 0;
         this.player.body.velocity.y = 0;
@@ -98,6 +104,24 @@ Game.prototype = {
             this.game.debug.renderCameraInfo(this.game.camera, 32, 32);
             this.game.debug.renderSpriteCorners(this.player);
             //this.game.debug.renderSpriteCollision(this.player, 32, 320);
+
+    },
+
+    interactcallback: function(sprite1, sprite2) {
+        var nottheplayer = null;
+        if (sprite1 === this.player)
+        {
+            nottheplayer = sprite2;
+        }
+        else if (sprite2 === this.player)
+        {
+            nottheplayer = sprite1;
+        }
+        if (nottheplayer && nottheplayer.interact)
+        {
+            // try to interact with this thing
+            nottheplayer.interact();
+        }
 
     },
 
