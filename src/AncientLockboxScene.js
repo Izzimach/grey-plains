@@ -10,11 +10,11 @@ AncientLockboxScene.CreateScene = function (game, centerx, centery, sceneradius)
 
 AncientLockboxScene.InteractionData = {
     name: 'Ancient Lockbox',
-    findtext: 'You find an ancient lockbox, sealed with artifact technology.',
+    findtext: 'You find an ancient safe, locked tight.',
     allowedinteractions: 
         {
-        'Key':'You use the %0 to open the lock, revealing what\'s inside:',
-        'Strong':'Using the %0 you force the box open. Inside is:'
+        'Key':'You use the {0} to open the lock, revealing what\'s inside:',
+        'Strong':'Using the {0} you force the box open. Inside is:'
         },
     nointeractiontext: 'You can\'t open the box. You need some way to unlock the box or something strong enough to force it open.',
     provides: ['Artifact']

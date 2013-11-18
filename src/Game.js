@@ -61,7 +61,8 @@ Game.prototype = {
 
         this.titletext = new Phaser.BitmapText(this.game, 50, 30, 'not here in the castle!', { font: '32px Tabasco', align: 'center'});
         this.inventory = new InventoryWindow(this.game, HUDlayer);
-
+        this.game.inventory = this.inventory;
+        
         //HUDlayer.add(this.titletext);
 
         this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[2]));

@@ -41,6 +41,8 @@ Boot.prototype = {
 		    this.game.stage.scale.setScreenSize(true);
 	    }
 
+	    this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.SPACEBAR);
+
 	    //	By this point the preloader assets have loaded to the cache, we've set the game settings
 	    //	So now let's start the real preloader going
 		this.game.state.start('Game');

@@ -19,9 +19,14 @@ Phaser.Utils.extend(Interactable.prototype, {
     update: function()
     {
         if (this.interactiondialog === null ||
-            this.interactiondialog.group === null)
+            this.interactiondialog.isopen === false)
         {
             this.notinteractedcount += 1;
+        }
+        else if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR))
+        {
+            this.interactiondialog.forEach(function(x) { x.visible=false; });
+            this.interactiondialog.isopen = false;
         }
     },
 
@@ -29,21 +34,54 @@ Phaser.Utils.extend(Interactable.prototype, {
     {
         // put in some debouncing here, so that after interacting with this thing,
         // the player has to pull away before they can interact again.
-        if (this.notinteractedcount > 5)
+        if (this.notinteractedcount > 10)
         {
             // create the dialog if it doesn't exist yet
             if (this.interactiondialog == null)
             {
-                this.interactiondialog = new DialogWindow(this.game, this.game.HUDlayer, this.interactiondata.findtext);
+                this.interactiondialog = new DialogWindow(this.game, null, this.interactiondata.findtext);
             }
             else
-
             {
-                this.game.HUDlayer.add(this.interactiondialog);
+                this.interactiondialog.forEach(function(x) {x.visible=true; });
             }
-            this.interactiondialog.setDialogText(this.interactiondata.findtext);
+            // does the player have something that can interact with this?
+            var interactableitem = this.findInteractionItem(this.game.inventory);
+            if (interactableitem !== null)
+            {
+                var useitem = interactableitem[0];
+                var usetag = interactableitem[1];
+                var rawinteractiontext = this.interactiondata.allowedinteractions[usetag];
+                var interactiontext = rawinteractiontext.replace(/\{0\}/, function(m) { return useitem.itemdata.name;});
+                this.interactiondialog.setDialogText(this.interactiondata.findtext + '\n' + interactiontext);
+            }
+            else
+            {
+                this.interactiondialog.setDialogText(this.interactiondata.findtext + '\n' + this.interactiondata.nointeractiontext);
+            }
+
+            this.interactiondialog.isopen = true;
         }
         this.notinteractedcount = 0;
+    },
+
+    findInteractionItem: function(inventory) {
+        var allowedtags = Object.keys(this.interactiondata.allowedinteractions);
+        var isallowedtag = function(tag) { return allowedtags.some(function(allowedtag) { return tag === allowedtag; })};
+
+        var interactionitem = null;
+        inventory.items.forEach(function (curitem) {
+            curitem.itemdata.tags.forEach(function(tag)
+            {
+                if (isallowedtag(tag))                
+                {
+                    interactionitem =  [curitem, tag];
+                }
+            })
+        });
+
+        // no match
+        return interactionitem;
     }
 });
 
