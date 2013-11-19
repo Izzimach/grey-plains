@@ -3,7 +3,8 @@ var MapManager = require('./MapManager');
 var Item = require('./Item');
 var ItemLibrary = require('./ItemLibrary');
 var InventoryWindow = require('./InventoryWindow');
-var AncientLockboxScene = require('./AncientLockboxScene');
+var Encounters = require('./Encounters');
+var StartEncounters = require('./StartEncounters');
 
 Game = function (game) {
 
@@ -68,7 +69,8 @@ Game.prototype = {
         this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[2]));
         this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[3]));
 
-        AncientLockboxScene.CreateScene(this.game,ItemLibrary.AllItems[0], 300,300,100);
+        Encounters[0].CreateEncounter(this.game,ItemLibrary.AllItems[0], 300,300,100);
+        StartEncounters[0].CreateEncounter(this.game,ItemLibrary.AllItems[1], 400,300,100);
 
         Phaser.xgame = this.game;
 	},
@@ -102,12 +104,11 @@ Game.prototype = {
 	},
 
     render: function () {
-            this.game.debug.renderCameraInfo(this.game.camera, 32, 32);
-            this.game.debug.renderSpriteCorners(this.player);
-            //this.game.debug.renderSpriteCollision(this.player, 32, 320);
 
     },
 
+    // called when the player collides with an interactable. we try to invoke the
+    // interactable's 'interact' method.
     interactcallback: function(sprite1, sprite2) {
         var nottheplayer = null;
         if (sprite1 === this.player)
