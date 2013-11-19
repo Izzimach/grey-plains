@@ -68,7 +68,7 @@ Game.prototype = {
         this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[2]));
         this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[3]));
 
-        AncientLockboxScene.CreateScene(this.game,300,300,100);
+        AncientLockboxScene.CreateScene(this.game,ItemLibrary.AllItems[0], 300,300,100);
 
         Phaser.xgame = this.game;
 	},

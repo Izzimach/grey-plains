@@ -3,8 +3,8 @@ var Interactable = require('./Interactable');
 
 AncientLockboxScene = {}
 
-AncientLockboxScene.CreateScene = function (game, centerx, centery, sceneradius) {
-    var lockbox = new Interactable(game, centerx, centery, AncientLockboxScene.InteractionData, 'actorspritesheet','AncientLockbox.png');
+AncientLockboxScene.CreateScene = function (game, resultitem, centerx, centery, sceneradius) {
+    var lockbox = new Interactable(game, resultitem, centerx, centery, AncientLockboxScene.InteractionData, 'actorspritesheet','AncientLockbox.png');
     game.interactablegroup.add(lockbox);
 }
 
