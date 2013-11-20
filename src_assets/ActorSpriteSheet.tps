@@ -179,6 +179,15 @@
             <filename>DialogFrame.png</filename>
             <filename>GammaCapybara.png</filename>
             <filename>AncientLockbox.png</filename>
+            <filename>AngryRobot.png</filename>
+            <filename>FriendlyRobot.png</filename>
+            <filename>PileOfTrash.png</filename>
+            <filename>AngryRobot.png</filename>
+            <filename>FriendlyRobot.png</filename>
+            <filename>PileOfTrash.png</filename>
+            <filename>AngryRobot.png</filename>
+            <filename>FriendlyRobot.png</filename>
+            <filename>PileOfTrash.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -64,8 +64,6 @@ Game.prototype = {
         this.inventory = new InventoryWindow(this.game, HUDlayer);
         this.game.inventory = this.inventory;
         
-        //HUDlayer.add(this.titletext);
-
         this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[2]));
         this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[3]));
 

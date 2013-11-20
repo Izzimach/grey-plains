@@ -10,7 +10,9 @@ ItemData.prototype = {
 
 }
 
-AllTags = [
+module.exports = {}
+module.exports.ItemData = ItemData;
+module.exports.AllTags = [
 // origin
     'Mundane',
     'Artifact',
@@ -20,11 +22,13 @@ AllTags = [
     'Key',
     'Strong',
 // misc
-    'Rodent'
-]
+    'Rodent',
+    'Food',
+    'Psionic',
+    'Alien',
+    'Interdimensional'
+];
 
-module.exports = {}
-module.exports.ItemData = ItemData;
 module.exports.AllItems = [
     new ItemData('Blaster', 'A beat-up blaster pistol. It will probably work long enough to fire a few shots.', 'BlasterPistol.png', ['Artifact','Combat']),
     new ItemData('Big Club', 'It\'s nothing fancy, but it can still do a good job bashing things.', 'BigClub.png', ['Mundane','Combat']),
@@ -37,4 +41,4 @@ module.exports.AllItems = [
     new ItemData('Hydraulic Car Jack','Amazingly the hydraulics are stil intact.', 'CarJack.png',['Mundane','Strong']),
     new ItemData('Kinetic Field Generator','Can move and lift large objects.', 'KineticField.png', ['Artifact','Strong']),
     new ItemData('Gamma Capybara', 'Super strong but not a good fighter.', 'GammaCapybara.png',['Mutant','Strong','Rodent'])
-]
+];

@@ -9,7 +9,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "BigClub.png",
+	"filename": "AngryRobot.png",
 	"frame": {"x":36,"y":2,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -17,7 +17,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "BlasterPistol.png",
+	"filename": "BigClub.png",
 	"frame": {"x":70,"y":2,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -25,7 +25,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "CarJack.png",
+	"filename": "BlasterPistol.png",
 	"frame": {"x":2,"y":36,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -33,7 +33,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "DialogFrame.png",
+	"filename": "CarJack.png",
 	"frame": {"x":36,"y":36,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -41,7 +41,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "FlameHamster.png",
+	"filename": "DialogFrame.png",
 	"frame": {"x":70,"y":36,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -49,7 +49,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "FloatingEye.png",
+	"filename": "FlameHamster.png",
 	"frame": {"x":2,"y":70,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -57,7 +57,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "GammaCapybara.png",
+	"filename": "FloatingEye.png",
 	"frame": {"x":36,"y":70,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -65,7 +65,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "KineticField.png",
+	"filename": "FriendlyRobot.png",
 	"frame": {"x":70,"y":70,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -73,7 +73,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Lockpicks.png",
+	"filename": "GammaCapybara.png",
 	"frame": {"x":2,"y":104,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -81,7 +81,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "PlayerSpriteStand.png",
+	"filename": "KineticField.png",
 	"frame": {"x":36,"y":104,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -89,7 +89,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "SquareFrame.png",
+	"filename": "Lockpicks.png",
 	"frame": {"x":70,"y":104,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -97,8 +97,32 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "VibroKey.png",
+	"filename": "PileOfTrash.png",
 	"frame": {"x":2,"y":138,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "PlayerSpriteStand.png",
+	"frame": {"x":36,"y":138,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "SquareFrame.png",
+	"frame": {"x":70,"y":138,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "VibroKey.png",
+	"frame": {"x":2,"y":172,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
@@ -111,6 +135,6 @@
 	"format": "RGBA8888",
 	"size": {"w":128,"h":256},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:b3ce18e2bb7d613428f973b4b799b48b:e0e61974c46e414f25c17654e581bdd3:fb20c8d6e26b618fe3f5e5f331500f2f$"
+	"smartupdate": "$TexturePacker:SmartUpdate:6fedee0e71a4fb0418e45e3924ea6cca:0e6ae57a8bfb3b4c8bae5994d28b81ca:fb20c8d6e26b618fe3f5e5f331500f2f$"
 }
 }

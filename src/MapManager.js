@@ -41,7 +41,7 @@ MapManager.prototype = {
         {
              for (var iy=0; iy < height; iy++)
              {
-                var tileindex = this.game.rnd.integerInRange(1,8);
+                var tileindex = this.game.rnd.integerInRange(1,6);
                 tilemap.putTile(tileindex,ix,iy);
              }
         }

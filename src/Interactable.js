@@ -35,7 +35,7 @@ Phaser.Utils.extend(Interactable.prototype, {
     {
         // put in some debouncing here, so that after interacting with this thing,
         // the player has to pull away before they can interact again.
-        if (this.notinteractedcount > 10 && this.resultitemdata != null)
+        if (this.notinteractedcount > 10 && this.exists)
         {
             // create the dialog if it doesn't exist yet
             if (this.interactiondialog == null)
@@ -52,16 +52,32 @@ Phaser.Utils.extend(Interactable.prototype, {
             {
                 var useitem = interactableitem[0];
                 var usetag = interactableitem[1];
+                var useitemname = '';
+                if (useitem != null) { useitemname = useitem.itemdata.name; }
+                var resultitemtext = '';
+                if (this.resultitemdata != null) { resultitemtext = this.resultitemdata.name; }
+
                 var rawinteractiontext = this.interactiondata.allowedinteractions[usetag];
-                var interactiontext = rawinteractiontext.replace(/\{0\}/, function(m) { return useitem.itemdata.name;});
-                var resultitemtext = this.resultitemdata.name;
-                this.interactiondialog.setDialogText(this.interactiondata.findtext + '\n' + interactiontext + '\n' + resultitemtext);
+                var interactiontext = rawinteractiontext
+                    .replace(/\{0\}/, function(m) { return useitemname;})
+                    .replace(/\{1\}/, function(m) { return resultitemtext; });
+
+
+                this.interactiondialog.setDialogText(this.interactiondata.findtext + '\n' + interactiontext);
 
                 // add the item to the player's inventory and remove this interactable
-                this.game.inventory.addItem(new Item(this.game, this.resultitemdata));
-                //this.game.interactablegroup.remove(this);
-                this.exists = false;
-                this.resultitemdata = null; // no result left
+                if (this.interactiondata.provides[0] === 'COMPLETED')
+                {
+                    // restart game?
+                    console.log("Game Completed");
+                }
+                else
+                {
+                    this.game.inventory.addItem(new Item(this.game, this.resultitemdata));
+                    //this.game.interactablegroup.remove(this);
+                    this.exists = false;
+                    this.resultitemdata = null; // no result left
+                }
             }
             else
             {
@@ -75,6 +91,7 @@ Phaser.Utils.extend(Interactable.prototype, {
 
     findInteractionItem: function(inventory) {
         var allowedtags = Object.keys(this.interactiondata.allowedinteractions);
+
         var isallowedtag = function(tag) { return allowedtags.some(function(allowedtag) { return tag === allowedtag; })};
 
         var interactionitem = null;
@@ -88,7 +105,12 @@ Phaser.Utils.extend(Interactable.prototype, {
             })
         });
 
-        // no match
+        // no match? check for an 'Any' tag
+        if (allowedtags.indexOf('Any') >= 0)
+        {
+            return [null,'Any'];
+        }
+
         return interactionitem;
     }
 });
