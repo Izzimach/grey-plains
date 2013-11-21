@@ -32,6 +32,11 @@ Phaser.Utils.extend(DialogWindow.prototype, {
     setDialogText: function(text) {
         var formattedtext = Item.prototype.ptext(text, LINELENGTH);
         this.dialogtext.setText(formattedtext);
+    },
+
+    setDismissText: function(dismisstext) {
+        var formattedtext = Item.prototype.ptext(text, LINELENGTH);
+        this.dismisstext.setText(formattedtext);
     }
 });
 

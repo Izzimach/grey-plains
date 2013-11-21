@@ -68,9 +68,9 @@
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
-            <int>256</int>
+            <int>512</int>
             <key>height</key>
-            <int>256</int>
+            <int>512</int>
         </QSize>
         <key>fixedTextureSize</key>
         <QSize>
@@ -171,7 +171,6 @@
             <filename>BigClub.png</filename>
             <filename>FlameHamster.png</filename>
             <filename>Lockpicks.png</filename>
-            <filename>FloatingEye.png</filename>
             <filename>VibroKey.png</filename>
             <filename>CarJack.png</filename>
             <filename>KineticField.png</filename>
@@ -188,6 +187,29 @@
             <filename>AngryRobot.png</filename>
             <filename>FriendlyRobot.png</filename>
             <filename>PileOfTrash.png</filename>
+            <filename>Currency.png</filename>
+            <filename>PuddleOfGoo.png</filename>
+            <filename>VendingMachine.png</filename>
+            <filename>Vortex.png</filename>
+            <filename>Currency.png</filename>
+            <filename>PuddleOfGoo.png</filename>
+            <filename>VendingMachine.png</filename>
+            <filename>Vortex.png</filename>
+            <filename>Currency.png</filename>
+            <filename>PuddleOfGoo.png</filename>
+            <filename>VendingMachine.png</filename>
+            <filename>Vortex.png</filename>
+            <filename>Currency.png</filename>
+            <filename>PuddleOfGoo.png</filename>
+            <filename>VendingMachine.png</filename>
+            <filename>Vortex.png</filename>
+            <filename>TKBeetle.png</filename>
+            <filename>InterdimensionalKeychain.png</filename>
+            <filename>SuperBrainGum.png</filename>
+            <filename>CheeseCrisps.png</filename>
+            <filename>BeefJerky.png</filename>
+            <filename>Burrow.png</filename>
+            <filename>RobotWreckage.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

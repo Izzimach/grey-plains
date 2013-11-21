@@ -19,8 +19,8 @@ function FilterEncounters(sourceencounters, requiredtags, forbiddentags)
 {
     var filterresult = [];
     sourceencounters.forEach(function (encounter) {
-        var encounterinteractiontags = Object.keys(encounter.InteractionData.allowedinteractions);
-        var encounterresulttags = encounter.InteractionData.provides;
+        var encounterinteractiontags = Object.keys(encounter.allowedinteractions);
+        var encounterresulttags = encounter.provides;
 
         var providesrequiredtag = requiredtags.some(function(tag) { return encounterresulttags.indexOf(tag) >= 0;});
         var hasforbiddentags = forbiddentags.some(function(tag) { return encounterinteractiontags.indexOf(tag) >= 0;});
@@ -57,7 +57,7 @@ function FilterItems(sourceitemdata, requiredtags, forbiddentags)
 function AddTagsFromEncounter(tagarray, encounter)
 {
     var oldtags = tagarray.slice();
-    var tags = Object.keys(encounter.InteractionData.allowedinteractions);
+    var tags = Object.keys(encounter.allowedinteractions);
     tags.forEach(function (tag) {
         // add this tag if it's not already in there
         if (oldtags.indexOf(tag) < 0) { oldtags.push(tag); }
@@ -74,7 +74,7 @@ function AccumulateEncounter(encounters, items, availableencounters, unavailable
     // the 'earliest' encounter is the last one in the encounter array
     var earliestencounter = encounters[encounters.length-1];
 
-    var leadingtags = Object.keys(earliestencounter.InteractionData.allowedinteractions);
+    var leadingtags = Object.keys(earliestencounter.allowedinteractions);
     var possibleitems = FilterItems(ItemLibrary.AllItems, leadingtags, unavailabletags);
     if (possibleitems.length === 0)
     {
@@ -108,9 +108,22 @@ function AccumulateEncounter(encounters, items, availableencounters, unavailable
         console.log('unavailabletags: ' + unavailabletags);
     }
     var chosenencounter = PickElement(possibleencounters);
-    console.log('chose encounter: ' + chosenencounter.InteractionData.name);
+    console.log('chose encounter: ' + chosenencounter.name);
 
     encounters.push(chosenencounter);
+
+    if (numencountersleft === 1)
+    {
+        var combineddata = [];
+        for (var ix=0; ix < encounters.length; ix++)
+        {
+            var encounter = encounters[ix];
+            var item = items[ix] || {name:'none'};
+            combineddata.push([encounter,item]);
+        }
+        combineddata.reverse();
+        return combineddata;
+    }
 
     return AccumulateEncounter(encounters, items, availableencounters, unavailabletags, numencountersleft-1);
 }
@@ -126,7 +139,7 @@ ScenarioGenerator = function (numencounters)
     // pick a random end encounter
     var endencounter = PickElement(EndEncounters);
 
-    console.log("End Encounter is " + endencounter.InteractionData.name);
+    console.log("End Encounter is " + endencounter.name);
 
     // initially all 'middle' encounters are available
     // we use a shallow copy since we don't want to modify the original
@@ -134,8 +147,10 @@ ScenarioGenerator = function (numencounters)
 
     var allencounters = AccumulateEncounter([endencounter], [null], encounterpool, unavailabletags, 3);
 
-    allencounters.forEach(function (encounter) {
-        console.log(encounter.InteractionData.name);
+    allencounters.forEach(function (encounteritem) {
+        var encounter = encounteritem[0];
+        var item = encounteritem[1];
+        console.log(encounter.name, '->', item.name);
     });
 }
 

@@ -40,6 +40,8 @@ Game.prototype = {
         tileset.setCollision(7,true,true,true,true);
         tileset.setCollision(6,true,true,true,true);
 
+        this.game.gamecompleted = false;
+
         this.worldmap = new MapManager(this.game, 40,40, tileset);
 
         this.game.interactablegroup = this.game.add.group(this.game.world,'Interactables');
@@ -86,21 +88,24 @@ Game.prototype = {
         this.player.body.velocity.x = 0;
         this.player.body.velocity.y = 0;
 
-        if (this.cursors.up.isDown)
+        if (this.game.gamecompleted == false)
         {
-            this.player.body.velocity.y = -100;
-        }
-        if (this.cursors.down.isDown)
-        {
-            this.player.body.velocity.y = +100;
-        }
-        if (this.cursors.left.isDown)
-        {
-            this.player.body.velocity.x = -100;
-        }
-        if (this.cursors.right.isDown)
-        {
-            this.player.body.velocity.x = +100;
+            if (this.cursors.up.isDown)
+            {
+                this.player.body.velocity.y = -100;
+            }
+            if (this.cursors.down.isDown)
+            {
+                this.player.body.velocity.y = +100;
+            }
+            if (this.cursors.left.isDown)
+            {
+                this.player.body.velocity.x = -100;
+            }
+            if (this.cursors.right.isDown)
+            {
+                this.player.body.velocity.x = +100;
+            }
         }
 	},
 

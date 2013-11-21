@@ -28,6 +28,12 @@ Phaser.Utils.extend(Interactable.prototype, {
         {
             this.interactiondialog.forEach(function(x) { x.visible=false; });
             this.interactiondialog.isopen = false;
+
+            // restart when the dialog is closed?
+            if (this.game.gamecompleted)
+            {
+                this.game.state.start('Game');
+            }
         }
     },
 
@@ -66,10 +72,12 @@ Phaser.Utils.extend(Interactable.prototype, {
                 this.interactiondialog.setDialogText(this.interactiondata.findtext + '\n' + interactiontext);
 
                 // add the item to the player's inventory and remove this interactable
-                if (this.interactiondata.provides[0] === 'COMPLETED')
+                if (this.interactiondata.provides.indexOf('COMPLETED') >= 0)
                 {
                     // restart game?
                     console.log("Game Completed");
+                    this.interactiondialog.setDismissText('Press spacebar to start a new game!');
+                    this.game.gamecompleted = true;
                 }
                 else
                 {
