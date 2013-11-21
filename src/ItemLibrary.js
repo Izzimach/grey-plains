@@ -30,6 +30,10 @@ module.exports.AllTags = [
 ];
 
 module.exports.AllItems = [
+    new ItemData('Bag of Cheese Crisps',' argh', 'BlasterPistol.png', ['Vending', 'Mundane', 'Food']),
+    new ItemData('Vacuum-Packed Beef Jerky', 'argh', 'BlasterPistol.png', ['Vending', 'Mundane', 'Food']),
+    new ItemData('Super-Psionic Bubble Gum','argh','BlasterPistol.png', ['Vending', 'Artifact', 'Psionic']),
+
     new ItemData('Blaster', 'A beat-up blaster pistol. It will probably work long enough to fire a few shots.', 'BlasterPistol.png', ['Artifact','Combat']),
     new ItemData('Big Club', 'It\'s nothing fancy, but it can still do a good job bashing things.', 'BigClub.png', ['Mundane','Combat']),
     new ItemData('Flamespitting Hamster', 'Don\'t look at her the wrong way or she\'ll set you on fire.', 'FlameHamster.png', ['Mutant','Combat','Rodent']),

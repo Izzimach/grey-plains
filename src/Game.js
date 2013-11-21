@@ -5,6 +5,7 @@ var ItemLibrary = require('./ItemLibrary');
 var InventoryWindow = require('./InventoryWindow');
 var Encounters = require('./Encounters');
 var StartEncounters = require('./StartEncounters');
+var ScenarioGenerator = require('./ScenarioGenerator');
 
 Game = function (game) {
 
@@ -69,6 +70,8 @@ Game.prototype = {
 
         Encounters[0].CreateEncounter(this.game,ItemLibrary.AllItems[0], 300,300,100);
         StartEncounters[0].CreateEncounter(this.game,ItemLibrary.AllItems[1], 400,300,100);
+
+        ScenarioGenerator(3);
 
         Phaser.xgame = this.game;
 	},

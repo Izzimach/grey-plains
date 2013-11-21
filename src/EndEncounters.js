@@ -22,8 +22,12 @@ InterdimensionalPortalEncounter = {
 OldGuyByTheFireEncounter = {
 
     CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
-                    var robot = new Interactable(game, resultitem, centerx, centery, OldGuyByTheFireEncounter.InteractionData, 'actorspritesheet','Vortex.png');
-                    game.interactablegroup.add(robot);
+                    var oldguy = new Interactable(game, resultitem, centerx, centery, OldGuyByTheFireEncounter.InteractionData, 'actorspritesheet','OldGuyByFire.png');
+                    game.interactablegroup.add(oldguy);
+                    
+                    // campfire
+                    //var campfire = new Interactable(game, resultitem, centerx-23, centery, OldGuyByTheFireEncounter.InteractionData, 'actorspritesheet','Campfire.png');
+                    game.add.sprite(centerx-23, centery, 'actorspritesheet', 'Campfire.png');
                 },
 
     InteractionData: {
