@@ -210,6 +210,8 @@
             <filename>BeefJerky.png</filename>
             <filename>Burrow.png</filename>
             <filename>RobotWreckage.png</filename>
+            <filename>OldGuyByFire.png</filename>
+            <filename>Campfire.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

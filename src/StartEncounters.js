@@ -15,7 +15,7 @@ PileOfTrashEncounter = {
         'Any':'Digging through the pile you find {1}.'
         },
     nointeractiontext: 'You find nothing in the pile of junk.',
-    provides: ['Mundane']
+    provides: ['Mundane', 'Weapon']
 };
 
 RadioactiveGooEncounter = {

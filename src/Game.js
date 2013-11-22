@@ -42,7 +42,7 @@ Game.prototype = {
 
         this.game.gamecompleted = false;
 
-        this.worldmap = new MapManager(this.game, 40,40, tileset);
+        this.worldmap = new MapManager(this.game, 30,30, tileset);
 
         this.game.interactablegroup = this.game.add.group(this.game.world,'Interactables');
 
@@ -63,17 +63,41 @@ Game.prototype = {
         HUDlayer.z = 4;
         this.game.HUDlayer = HUDlayer;
 
-        this.titletext = new Phaser.BitmapText(this.game, 50, 30, 'not here in the castle!', { font: '32px Tabasco', align: 'center'});
+        this.helptext = this.game.add.bitmapText(50, 130, 'Use arrows to move', { font: '32px Tabasco', align: 'center'});
+        //this.game.add.existing(this.helptext);
+
         this.inventory = new InventoryWindow(this.game, HUDlayer);
         this.game.inventory = this.inventory;
         
-        this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[2]));
-        this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[3]));
+        //this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[2]));
+        //this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[3]));
 
-        Encounters[0].CreateEncounter(this.game,ItemLibrary.AllItems[0], 300,300,100);
-        StartEncounters[0].CreateEncounter(this.game,ItemLibrary.AllItems[1], 400,300,100);
+        //Encounters[0].CreateEncounter(this.game,ItemLibrary.AllItems[0], 300,300,100);
+        //StartEncounters[0].CreateEncounter(this.game,ItemLibrary.AllItems[1], 400,300,100);
 
-        ScenarioGenerator(3);
+        var scenario = ScenarioGenerator(3);
+        if (scenario === null)
+        {
+            this.helptext.setText("Scenario generator failed, please re-load");
+            return;
+        }
+
+        var encounterlocations = [
+            [300,300],
+            [600,350],
+            [350,600],
+            [625,625]
+        ];
+
+        for (var encounterix=0; encounterix < scenario.length; encounterix++)
+        {
+            var encounterdata = scenario[encounterix][0];
+            var itemdata = scenario[encounterix][1];
+            var encounterx = encounterlocations[encounterix][0];
+            var encountery = encounterlocations[encounterix][1];
+
+            encounterdata.CreateEncounter(this.game, itemdata, encounterx, encountery, 100);
+        }
 
         Phaser.xgame = this.game;
 	},
@@ -105,6 +129,12 @@ Game.prototype = {
             if (this.cursors.right.isDown)
             {
                 this.player.body.velocity.x = +100;
+            }
+            if (this.player.body.velocity.x != 0 ||
+                this.player.body.velocity.y != 0)
+            {
+                // remove the 'use arrows to move' help text
+                this.helptext.visible = false;
             }
         }
 	},

@@ -65,8 +65,8 @@ Phaser.Utils.extend(Interactable.prototype, {
 
                 var rawinteractiontext = this.interactiondata.allowedinteractions[usetag];
                 var interactiontext = rawinteractiontext
-                    .replace(/\{0\}/, function(m) { return useitemname;})
-                    .replace(/\{1\}/, function(m) { return resultitemtext; });
+                    .replace(/\{0\}/g, function(m) { return useitemname;})
+                    .replace(/\{1\}/g, function(m) { return resultitemtext; });
 
 
                 this.interactiondialog.setDialogText(this.interactiondata.findtext + '\n' + interactiontext);
