@@ -19,11 +19,11 @@ module.exports.AllTags = [
     'Mutant',
     'Vending',
 // function - usually an interaction tag of an encounter
-    'Currency',
     'Combat',
     'Key',
     'Strong',
 // misc - can be either result or interaction tags of an encounter
+    'Currency',
     'Insect',
     'Rodent',
     'Food',
@@ -35,7 +35,7 @@ module.exports.AllTags = [
 
 module.exports.AllItems = [
     new ItemData('Bag of Cheese Crisps', 'Even now you can ruin your digestive system.', 'CheeseCrisps.png', ['Vending', 'Mundane', 'Food']),
-    new ItemData('Vacuum-Packed Beef Jerky', 'Chewy and Tasty.', 'BeefJerky.png', ['Vending', 'Mundane', 'Food']),
+    new ItemData('Old Beef Jerky', 'Still chewy and tasty.', 'BeefJerky.png', ['Vending', 'Mundane', 'Food']),
     new ItemData('Super-Brain Bubble Gum','Pop some gum and explore your newfound mental powers!','SuperBrainGum.png', ['Vending', 'Psionic']),
     new ItemData('Interdimensional Keychain','Enabling Interdimensional Travel since 2077!','InterdimensionalKeychain.png', ['Vending', 'Artifact', 'Interdimensional']),
 

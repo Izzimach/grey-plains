@@ -42,7 +42,7 @@ Game.prototype = {
 
         this.game.gamecompleted = false;
 
-        this.worldmap = new MapManager(this.game, 30,30, tileset);
+        this.worldmap = new MapManager(this.game, 32,28, tileset);
 
         this.game.interactablegroup = this.game.add.group(this.game.world,'Interactables');
 
@@ -82,12 +82,8 @@ Game.prototype = {
             return;
         }
 
-        var encounterlocations = [
-            [300,300],
-            [600,350],
-            [350,600],
-            [625,625]
-        ];
+        var encounterlocations = this.worldmap.generateEncounterLocations(4);
+        console.log(encounterlocations);
 
         for (var encounterix=0; encounterix < scenario.length; encounterix++)
         {
@@ -130,10 +126,11 @@ Game.prototype = {
             {
                 this.player.body.velocity.x = +100;
             }
+
             if (this.player.body.velocity.x != 0 ||
                 this.player.body.velocity.y != 0)
             {
-                // remove the 'use arrows to move' help text
+                // remove the 'use arrows to move' help text once the player moves
                 this.helptext.visible = false;
             }
         }

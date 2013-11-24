@@ -46,6 +46,40 @@ MapManager.prototype = {
              }
         }
         tilemap.calculateIndexes();
+    },
+
+    generateEncounterLocations: function(numlocations)
+    {
+        var wh = GetWidthHeight(this.tilemap);
+        var mapwidth = wh[0];
+        var mapheight = wh[1];
+        var pixelwidth = mapwidth * this.tileset.tileWidth;
+        var pixelheight = mapheight * this.tileset.tileHeight;
+
+        var pixelpadding = 50;
+        var placementwidth = pixelwidth - pixelpadding*2;
+        var placementheight = pixelheight - pixelpadding*2;
+
+        var placements = [];
+        while (placements.length < numlocations)
+        {
+            var placementx = Math.random() * placementwidth + pixelpadding;
+            var placementy = Math.random() * placementheight + pixelpadding;
+
+            // if it's no too close to the other encounters, add it
+            var nottooclose = function(compareto) {
+                var dx = compareto[0] - placementx;
+                var dy = compareto[1] - placementy;
+                return (dx*dx+dy*dy) > pixelpadding * pixelpadding;
+            }
+
+            if (placements.every(nottooclose))
+            {
+                placements.push([placementx, placementy]);
+            }
+        }
+
+        return placements;
     }
 
 };
