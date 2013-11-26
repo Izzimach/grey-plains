@@ -212,6 +212,15 @@
             <filename>RobotWreckage.png</filename>
             <filename>OldGuyByFire.png</filename>
             <filename>Campfire.png</filename>
+            <filename>BrainInATank.png</filename>
+            <filename>Destructobot5000.png</filename>
+            <filename>SlotMachine.png</filename>
+            <filename>BrainInATank.png</filename>
+            <filename>Destructobot5000.png</filename>
+            <filename>SlotMachine.png</filename>
+            <filename>BrainInATank.png</filename>
+            <filename>Destructobot5000.png</filename>
+            <filename>SlotMachine.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

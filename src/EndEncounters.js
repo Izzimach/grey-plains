@@ -40,7 +40,31 @@ OldGuyByTheFireEncounter = {
     provides: ['COMPLETED']
 };
 
+
+BrainInATankEncounter = {
+
+    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+                    var brain = new Interactable(game, resultitem, centerx, centery, BrainInATankEncounter, 'actorspritesheet','BrainInATank.png');
+                    game.interactablegroup.add(brain);
+                },
+
+    name: 'Brain In A Tank',
+    findtext: 'You see a brain floating in a tank of glowing liquid.',
+    allowedinteractions: 
+        {
+        'Psionic':'Communicating with telepathy, you find that the brain was left here long ago as the gatekeeper of a secret underground vault. ' +
+                    'The brain blasts a torrent of information into your head, detailing how to find and open the vault doors. ' +
+                    'Now enlightened, you trundle off to find this mysterious vault and the secrets inside.',
+        'Destructobot':'Upon seeing the Destructobot, the brain begins sending throughts into your brain: "Ah! There is the Destructobot intended to hold my brain! ' +
+                    'I thought it was lost, thank you for bringing it back!" The brain beams its conciousness into the Destructobot, rolls away a few feets, and asks ' +
+                    '"Are you coming with me, or not?" Perhaps the now-intelligent cybertank knows about a better place than these barrens wastes? You follow the Destructobot on its journey, ever hopeful.'
+        },
+    nointeractiontext: 'You can\'t seem to communicate with the brain at the moment, so you leave with a slight headache.',
+    provides: ['COMPLETED']
+};
+
 module.exports = [
+BrainInATankEncounter,
     InterdimensionalPortalEncounter,
     OldGuyByTheFireEncounter
 ];

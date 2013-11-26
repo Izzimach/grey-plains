@@ -52,7 +52,26 @@ SmashedRobotEncounter = {
     provides: ['Artifact']
 };
 
+SlotMachineEncounter = {
+
+    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+                    var slots = new Interactable(game, resultitem, centerx, centery, SlotMachineEncounter, 'actorspritesheet','SlotMachine.png');
+                    game.interactablegroup.add(slots);
+                },
+
+    name: 'Slot Machine',
+    findtext: 'You see a slot machine which, strangely enough, seems to be in working condition.',
+    allowedinteractions: 
+        {
+        'Any':'You pull on the handle to try your luck. You get three cherries and the slot machine spits out a {1}. Further pulls on the handle do nothing.'
+        },
+    nointeractiontext: 'You leave the slot machine alone.',
+    provides: ['Currency', 'Vending']
+};
+
+
 module.exports = [
+    SlotMachineEncounter,
     SmashedRobotEncounter,
     PileOfTrashEncounter,
     RadioactiveGooEncounter

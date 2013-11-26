@@ -41,7 +41,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Burrow.png",
+	"filename": "BrainInATank.png",
 	"frame": {"x":172,"y":2,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -49,7 +49,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Campfire.png",
+	"filename": "Burrow.png",
 	"frame": {"x":206,"y":2,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -57,7 +57,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "CarJack.png",
+	"filename": "Campfire.png",
 	"frame": {"x":2,"y":36,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -65,7 +65,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "CheeseCrisps.png",
+	"filename": "CarJack.png",
 	"frame": {"x":36,"y":36,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -73,7 +73,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Currency.png",
+	"filename": "CheeseCrisps.png",
 	"frame": {"x":70,"y":36,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -81,7 +81,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "DialogFrame.png",
+	"filename": "Currency.png",
 	"frame": {"x":104,"y":36,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -89,7 +89,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "FlameHamster.png",
+	"filename": "Destructobot5000.png",
 	"frame": {"x":138,"y":36,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -97,7 +97,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "FriendlyRobot.png",
+	"filename": "DialogFrame.png",
 	"frame": {"x":172,"y":36,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -105,7 +105,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "GammaCapybara.png",
+	"filename": "FlameHamster.png",
 	"frame": {"x":206,"y":36,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -113,7 +113,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "InterdimensionalKeychain.png",
+	"filename": "FriendlyRobot.png",
 	"frame": {"x":2,"y":70,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -121,7 +121,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "KineticField.png",
+	"filename": "GammaCapybara.png",
 	"frame": {"x":36,"y":70,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -129,7 +129,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "Lockpicks.png",
+	"filename": "InterdimensionalKeychain.png",
 	"frame": {"x":70,"y":70,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -137,7 +137,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "OldGuyByFire.png",
+	"filename": "KineticField.png",
 	"frame": {"x":104,"y":70,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -145,7 +145,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "PileOfTrash.png",
+	"filename": "Lockpicks.png",
 	"frame": {"x":138,"y":70,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -153,7 +153,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "PlayerSpriteStand.png",
+	"filename": "OldGuyByFire.png",
 	"frame": {"x":172,"y":70,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -161,8 +161,24 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
+	"filename": "PileOfTrash.png",
+	"frame": {"x":206,"y":70,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "PlayerSpriteStand.png",
+	"frame": {"x":2,"y":104,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
 	"filename": "PuddleOfGoo.png",
-	"frame": {"x":2,"y":104,"w":128,"h":128},
+	"frame": {"x":36,"y":104,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -170,14 +186,6 @@
 },
 {
 	"filename": "RobotWreckage.png",
-	"frame": {"x":132,"y":104,"w":32,"h":32},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
-	"sourceSize": {"w":32,"h":32}
-},
-{
-	"filename": "SquareFrame.png",
 	"frame": {"x":166,"y":104,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -185,7 +193,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "SuperBrainGum.png",
+	"filename": "SlotMachine.png",
 	"frame": {"x":200,"y":104,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -193,7 +201,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "TKBeetle.png",
+	"filename": "SquareFrame.png",
 	"frame": {"x":2,"y":234,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -201,7 +209,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "VendingMachine.png",
+	"filename": "SuperBrainGum.png",
 	"frame": {"x":36,"y":234,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -209,7 +217,7 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
-	"filename": "VibroKey.png",
+	"filename": "TKBeetle.png",
 	"frame": {"x":70,"y":234,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
@@ -217,8 +225,24 @@
 	"sourceSize": {"w":32,"h":32}
 },
 {
+	"filename": "VendingMachine.png",
+	"frame": {"x":104,"y":234,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
+	"filename": "VibroKey.png",
+	"frame": {"x":138,"y":234,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+{
 	"filename": "Vortex.png",
-	"frame": {"x":104,"y":234,"w":128,"h":128},
+	"frame": {"x":2,"y":268,"w":128,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
@@ -231,6 +255,6 @@
 	"format": "RGBA8888",
 	"size": {"w":256,"h":512},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:cf68490fce2928637e4c4da887aa700d:ea79b2b8392e74abe7baf243032d828c:fb20c8d6e26b618fe3f5e5f331500f2f$"
+	"smartupdate": "$TexturePacker:SmartUpdate:71cd09a35aa1becb54eef56e9775fa0c:90e2a90a7402dbae3cd73e9d7bd7319d:fb20c8d6e26b618fe3f5e5f331500f2f$"
 }
 }

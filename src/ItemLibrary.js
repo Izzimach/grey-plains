@@ -22,7 +22,7 @@ module.exports.AllTags = [
     'Combat',
     'Key',
     'Strong',
-// misc - can be either result or interaction tags of an encounter
+// misc - can be either result or interaction tags of an encounter, usually used for special encounter sequences
     'Currency',
     'Insect',
     'Rodent',
@@ -30,10 +30,13 @@ module.exports.AllTags = [
     'Psionic',
     'Alien',
     'Interdimensional',
-    'Weapon'
+    'Weapon',
+    'Destructobot'
 ];
 
 module.exports.AllItems = [
+    new ItemData('Destructobot 5000','Ready to destroy things at your command.', 'Destructobot5000.png', ['Artifact','Combat','Destructobot']),
+
     new ItemData('Bag of Cheese Crisps', 'Even now you can ruin your digestive system.', 'CheeseCrisps.png', ['Vending', 'Mundane', 'Food']),
     new ItemData('Old Beef Jerky', 'Still chewy and tasty.', 'BeefJerky.png', ['Vending', 'Mundane', 'Food']),
     new ItemData('Super-Brain Bubble Gum','Pop some gum and explore your newfound mental powers!','SuperBrainGum.png', ['Vending', 'Psionic']),
