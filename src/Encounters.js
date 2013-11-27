@@ -3,7 +3,7 @@ var Interactable = require('./Interactable');
 
 AncientLockboxEncounter = {
 
-    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+    createEncounter: function (game, resultitem, centerx, centery, sceneradius) {
                     var lockbox = new Interactable(game, resultitem, centerx, centery, AncientLockboxEncounter, 'actorspritesheet','AncientLockbox.png');
                     game.interactablegroup.add(lockbox);
                 },
@@ -21,7 +21,7 @@ AncientLockboxEncounter = {
 
 FriendlyRobotEncounter = {
 
-    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+    createEncounter: function (game, resultitem, centerx, centery, sceneradius) {
                     var robot = new Interactable(game, resultitem, centerx, centery, FriendlyRobotEncounter, 'actorspritesheet','FriendlyRobot.png');
                     game.interactablegroup.add(robot);
                 },
@@ -37,9 +37,13 @@ FriendlyRobotEncounter = {
 
 AngryRobotEncounter = {
 
-    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+    createEncounter: function (game, resultitem, centerx, centery, sceneradius) {
                     var robot = new Interactable(game, resultitem, centerx, centery, AngryRobotEncounter, 'actorspritesheet','AngryRobot.png');
                     game.interactablegroup.add(robot);
+                },
+
+    activatedEncounter: function(interactable, interactiontag) {
+                    interactable.frameName = 'RobotWreckage.png';
                 },
 
     name: 'Angry Robot',
@@ -54,7 +58,7 @@ AngryRobotEncounter = {
 
 VendingMachineEncounter = {
 
-    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+    createEncounter: function (game, resultitem, centerx, centery, sceneradius) {
                     var robot = new Interactable(game, resultitem, centerx, centery, VendingMachineEncounter, 'actorspritesheet','VendingMachine.png');
                     game.interactablegroup.add(robot);
                 },
@@ -74,7 +78,7 @@ VendingMachineEncounter = {
 
 BurrowEncounter = {
 
-    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+    createEncounter: function (game, resultitem, centerx, centery, sceneradius) {
                     var burrow = new Interactable(game, resultitem, centerx, centery, BurrowEncounter, 'actorspritesheet','Burrow.png');
                     game.interactablegroup.add(burrow);
                 },
@@ -93,7 +97,7 @@ BurrowEncounter = {
 
 MoundEncounter = {
 
-    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+    createEncounter: function (game, resultitem, centerx, centery, sceneradius) {
                     var mound = new Interactable(game, resultitem, centerx, centery, MoundEncounter, 'actorspritesheet','BugMound.png');
                     game.interactablegroup.add(mound);
                 },

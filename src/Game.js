@@ -72,8 +72,8 @@ Game.prototype = {
         //this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[2]));
         //this.inventory.addItem(new Item(this.game, ItemLibrary.AllItems[3]));
 
-        //Encounters[0].CreateEncounter(this.game,ItemLibrary.AllItems[0], 300,300,100);
-        //StartEncounters[0].CreateEncounter(this.game,ItemLibrary.AllItems[1], 400,300,100);
+        //Encounters[0].createEncounter(this.game,ItemLibrary.AllItems[0], 300,300,100);
+        //StartEncounters[0].createEncounter(this.game,ItemLibrary.AllItems[1], 400,300,100);
 
         var scenario = ScenarioGenerator(3);
         if (scenario === null)
@@ -92,7 +92,7 @@ Game.prototype = {
             var encounterx = encounterlocations[encounterix][0];
             var encountery = encounterlocations[encounterix][1];
 
-            encounterdata.CreateEncounter(this.game, itemdata, encounterx, encountery, 100);
+            encounterdata.createEncounter(this.game, itemdata, encounterx, encountery, 100);
         }
 
         Phaser.xgame = this.game;

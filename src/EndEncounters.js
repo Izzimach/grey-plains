@@ -2,7 +2,7 @@ var Interactable = require('./Interactable');
 
 InterdimensionalPortalEncounter = {
 
-    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+    createEncounter: function (game, resultitem, centerx, centery, sceneradius) {
                     var portal = new Interactable(game, resultitem, centerx, centery, InterdimensionalPortalEncounter, 'actorspritesheet','Vortex.png');
                     game.interactablegroup.add(portal);
                 },
@@ -19,7 +19,7 @@ InterdimensionalPortalEncounter = {
 
 OldGuyByTheFireEncounter = {
 
-    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+    createEncounter: function (game, resultitem, centerx, centery, sceneradius) {
                     var oldguy = new Interactable(game, resultitem, centerx, centery, OldGuyByTheFireEncounter, 'actorspritesheet','OldGuyByFire.png');
                     game.interactablegroup.add(oldguy);
                     
@@ -43,7 +43,7 @@ OldGuyByTheFireEncounter = {
 
 BrainInATankEncounter = {
 
-    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+    createEncounter: function (game, resultitem, centerx, centery, sceneradius) {
                     var brain = new Interactable(game, resultitem, centerx, centery, BrainInATankEncounter, 'actorspritesheet','BrainInATank.png');
                     game.interactablegroup.add(brain);
                 },

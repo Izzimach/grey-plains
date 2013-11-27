@@ -3,7 +3,7 @@ var Interactable = require('./Interactable');
 
 PileOfTrashEncounter = {
 
-    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+    createEncounter: function (game, resultitem, centerx, centery, sceneradius) {
                     var robot = new Interactable(game, resultitem, centerx, centery, PileOfTrashEncounter, 'actorspritesheet','PileOfTrash.png');
                     game.interactablegroup.add(robot);
                 },
@@ -20,7 +20,7 @@ PileOfTrashEncounter = {
 
 RadioactiveGooEncounter = {
 
-    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+    createEncounter: function (game, resultitem, centerx, centery, sceneradius) {
                     var robot = new Interactable(game, resultitem, centerx, centery, RadioactiveGooEncounter, 'actorspritesheet','PuddleOfGoo.png');
                     game.interactablegroup.add(robot);
                 },
@@ -37,7 +37,7 @@ RadioactiveGooEncounter = {
 
 SmashedRobotEncounter = {
 
-    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+    createEncounter: function (game, resultitem, centerx, centery, sceneradius) {
                     var robot = new Interactable(game, resultitem, centerx, centery, SmashedRobotEncounter, 'actorspritesheet','RobotWreckage.png');
                     game.interactablegroup.add(robot);
                 },
@@ -54,7 +54,7 @@ SmashedRobotEncounter = {
 
 SlotMachineEncounter = {
 
-    CreateEncounter: function (game, resultitem, centerx, centery, sceneradius) {
+    createEncounter: function (game, resultitem, centerx, centery, sceneradius) {
                     var slots = new Interactable(game, resultitem, centerx, centery, SlotMachineEncounter, 'actorspritesheet','SlotMachine.png');
                     game.interactablegroup.add(slots);
                 },

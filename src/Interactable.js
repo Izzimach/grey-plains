@@ -82,6 +82,11 @@ Phaser.Utils.extend(Interactable.prototype, {
                 else
                 {
                     this.game.inventory.addItem(new Item(this.game, this.resultitemdata));
+                    // invoke the "activated" method on the encounter, if any
+                    if (this.interactiondata.activatedEncounter)
+                    {
+                        this.interactiondata.activatedEncounter(this, usetag);
+                    }
                     //this.game.interactablegroup.remove(this);
                     this.exists = false;
                     this.resultitemdata = null; // no result left
