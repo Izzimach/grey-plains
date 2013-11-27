@@ -221,6 +221,7 @@
             <filename>BrainInATank.png</filename>
             <filename>Destructobot5000.png</filename>
             <filename>SlotMachine.png</filename>
+            <filename>BugMound.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
