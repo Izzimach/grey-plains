@@ -56,7 +56,7 @@ MapManager.prototype = {
         var pixelwidth = mapwidth * this.tileset.tileWidth;
         var pixelheight = mapheight * this.tileset.tileHeight;
 
-        var pixelpadding = 50;
+        var pixelpadding = 100;
         var placementwidth = pixelwidth - pixelpadding*2;
         var placementheight = pixelheight - pixelpadding*2;
 
