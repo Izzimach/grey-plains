@@ -3,7 +3,7 @@ var DIALOGX = 100;
 var DIALOGY = 100;
 var DIALOGW = 500;
 var DIALOGH = 400;
-var LINELENGTH=40;
+var LINELENGTH=45;
 
 var Item = require('./Item');
 
@@ -30,7 +30,10 @@ DialogWindow.prototype.constructor = DialogWindow;
 
 Phaser.Utils.extend(DialogWindow.prototype, {
     setDialogText: function(text) {
-        var formattedtext = Item.prototype.ptext(text, LINELENGTH);
+        var hardlines = text.split("\n");
+        var formatoneline = function(x) { return Item.prototype.ptext(x, LINELENGTH); }
+        var formattedlines = hardlines.map(formatoneline);
+        var formattedtext = formattedlines.join("\n");
         this.dialogtext.setText(formattedtext);
     },
 
