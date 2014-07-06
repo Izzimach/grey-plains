@@ -50,7 +50,7 @@ Item = function(game, itemdata) {
     this.tooltip = new Phaser.BitmapText(this.game, 0, 0, '{' + this.itemdata.name + '}\n' + formatteddescription, { font: '20px Tabasco', align: 'left'});
 
     //game.add.existing(this);
-}
+};
 Item.prototype = Object.create(Phaser.Sprite.prototype);
 Item.prototype.constructor = Item;
 
@@ -60,7 +60,7 @@ Phaser.Utils.extend(Item.prototype, {
     update: function() {
         var curpointer = this.input.activePointer;
 
-        if (this.showingtooltip == false)
+        if (this.showingtooltip === false)
         {
             // not showing tooltip yet, check to see if we should display
             if (this.input.pointerOver(curpointer) && this.input.overDuration(curpointer) > TOOLTIPMS)
@@ -85,7 +85,7 @@ Phaser.Utils.extend(Item.prototype, {
         else
         {
             // showing a tooltip, remove it when the pointer leaves
-            if (this.input.pointerOver(curpointer) == false)
+            if (this.input.pointerOver(curpointer) === false)
             {
                 if (this.group)
                 {

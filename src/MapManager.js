@@ -1,4 +1,4 @@
-
+/* jshint -W083 */
 function GetWidthHeight(/* Phaser.Tilemap */ tilemap)
 {
     var width = tilemap.layers[tilemap.currentLayer].width;
@@ -61,22 +61,24 @@ MapManager.prototype = {
         var placementheight = pixelheight - pixelpadding*2;
 
         var placements = [];
+
         while (placements.length < numlocations)
         {
-            var placementx = Math.random() * placementwidth + pixelpadding;
-            var placementy = Math.random() * placementheight + pixelpadding;
+		var placementx = Math.random() * placementwidth + pixelpadding;
+		var placementy = Math.random() * placementheight + pixelpadding;
 
-            // if it's no too close to the other encounters, add it
-            var nottooclose = function(compareto) {
-                var dx = compareto[0] - placementx;
-                var dy = compareto[1] - placementy;
-                return (dx*dx+dy*dy) > pixelpadding * pixelpadding;
-            }
+		// if it's not too close to the other encounters, add it
+		var nottooclose = function(compareto) {
+			var dx = compareto[0] - placementx;
+			var dy = compareto[1] - placementy;
+			return (dx*dx+dy*dy) > pixelpadding * pixelpadding;
+		};
 
-            if (placements.every(nottooclose))
-            {
-                placements.push([placementx, placementy]);
-            }
+
+		if (placements.every(nottooclose))
+		{
+			placements.push([placementx, placementy]);
+		}
         }
 
         return placements;

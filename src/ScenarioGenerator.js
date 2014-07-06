@@ -36,8 +36,8 @@ function FilterEncounters(sourceencounters, requiredtags, forbiddentags)
 // at least one of the required tags and none of the forbidden tags
 function FilterItems(sourceitemdata, requiredtags, forbiddentags)
 {
-    var hasrequiredtags = function (tags) { return tags.some(function(tag) { return requiredtags.indexOf(tag) >= 0; })};
-    var hasforbiddentags = function (tags) { return tags.some(function(tag) { return forbiddentags.indexOf(tag) >= 0; })};
+    var hasrequiredtags = function (tags) { return tags.some(function(tag) { return requiredtags.indexOf(tag) >= 0; });};
+    var hasforbiddentags = function (tags) { return tags.some(function(tag) { return forbiddentags.indexOf(tag) >= 0; });};
 
     var itemallowed = function(itemdata) {
         var tags = itemdata.tags;
@@ -126,9 +126,9 @@ function AccumulateEncounter(encounters, items, availableencounters, unavailable
     return AccumulateEncounter(encounters, items, availableencounters, unavailabletags, numencountersleft-1);
 }
 
-ScenarioGenerator = function (numencounters, retries)
+ScenarioGenerator = function (numencounters, retries_in)
 {
-    var retries = retries || 0;
+    var retries = retries_in || 0;
 
     // we start with all item tags available. Whenever an item is used the tags
     // for that item are 'used' and no longer available
@@ -146,7 +146,7 @@ ScenarioGenerator = function (numencounters, retries)
     var encounterpool = Encounters.slice();
 
     var allencounters = AccumulateEncounter([endencounter], [null], encounterpool, unavailabletags, 3);
-    if (allencounters == null) // whoops, try again?
+    if (allencounters === null) // whoops, try again?
     {
         if (retries > 10)
         {
@@ -165,7 +165,7 @@ ScenarioGenerator = function (numencounters, retries)
     });
 
     return allencounters;
-}
+};
 
 
 

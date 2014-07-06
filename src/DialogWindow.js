@@ -23,7 +23,7 @@ DialogWindow = function(game, hudgroup, text) {
     this.add(this.dialogframe);
     this.add(this.dialogtext);
     this.add(this.dismisstext);
-}
+};
 
 DialogWindow.prototype = Object.create(Phaser.Group.prototype);
 DialogWindow.prototype.constructor = DialogWindow;
@@ -31,7 +31,7 @@ DialogWindow.prototype.constructor = DialogWindow;
 Phaser.Utils.extend(DialogWindow.prototype, {
     setDialogText: function(text) {
         var hardlines = text.split("\n");
-        var formatoneline = function(x) { return Item.prototype.ptext(x, LINELENGTH); }
+        var formatoneline = function(x) { return Item.prototype.ptext(x, LINELENGTH); };
         var formattedlines = hardlines.map(formatoneline);
         var formattedtext = formattedlines.join("\n");
         this.dialogtext.setText(formattedtext);

@@ -5,5 +5,5 @@ InteractionData = function (name, textdescription, providestags, allowedinteract
     this.provides = providestags;
     this.nointeractiontext = nointeractiontext;
     this.allowedinteractions = allowedinteractions;
-}
+};
 

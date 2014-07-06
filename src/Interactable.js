@@ -11,7 +11,7 @@ Interactable = function(game, resultitemdata, x,y, interactiondata, spritesheet,
     this.resultitemdata = resultitemdata;
     this.notinteractedcount = 0;
     this.interactiondialog = null;
-}
+};
 
 Interactable.prototype = Object.create(Phaser.Sprite.prototype);
 Interactable.prototype.constructor = Interactable;
@@ -44,7 +44,7 @@ Phaser.Utils.extend(Interactable.prototype, {
         if (this.notinteractedcount > 10 && this.exists)
         {
             // create the dialog if it doesn't exist yet
-            if (this.interactiondialog == null)
+            if (this.interactiondialog === null)
             {
                 this.interactiondialog = new DialogWindow(this.game, null, this.interactiondata.findtext);
             }
@@ -59,9 +59,9 @@ Phaser.Utils.extend(Interactable.prototype, {
                 var useitem = interactableitem[0];
                 var usetag = interactableitem[1];
                 var useitemname = '';
-                if (useitem != null) { useitemname = useitem.itemdata.name; }
+                if (useitem !== null) { useitemname = useitem.itemdata.name; }
                 var resultitemtext = '';
-                if (this.resultitemdata != null) { resultitemtext = this.resultitemdata.name; }
+                if (this.resultitemdata !== null) { resultitemtext = this.resultitemdata.name; }
 
                 var rawinteractiontext = this.interactiondata.allowedinteractions[usetag];
                 var interactiontext = rawinteractiontext
@@ -105,7 +105,7 @@ Phaser.Utils.extend(Interactable.prototype, {
     findInteractionItem: function(inventory) {
         var allowedtags = Object.keys(this.interactiondata.allowedinteractions);
 
-        var isallowedtag = function(tag) { return allowedtags.some(function(allowedtag) { return tag === allowedtag; })};
+        var isallowedtag = function(tag) { return allowedtags.some(function(allowedtag) { return tag === allowedtag; });};
 
         var interactionitem = null;
         inventory.items.forEach(function (curitem) {
@@ -115,7 +115,7 @@ Phaser.Utils.extend(Interactable.prototype, {
                 {
                     interactionitem =  [curitem, tag];
                 }
-            })
+            });
         });
 
         // no match? check for an 'Any' tag

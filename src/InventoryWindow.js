@@ -16,7 +16,7 @@ InventoryWindow = function(game, hudgroup) {
     this.add(inventoryframe);
 
     this.items = [];
-}
+};
 
 InventoryWindow.prototype = Object.create(Phaser.Group.prototype);
 InventoryWindow.prototype.constructor = InventoryWindow;

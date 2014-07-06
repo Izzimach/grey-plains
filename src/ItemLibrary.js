@@ -4,13 +4,13 @@ ItemData = function(name, description, spritename, typetags) {
     this.description = description;
     this.spritename = spritename;
     this.tags = typetags;
-}
+};
 
 ItemData.prototype = {
 
-}
+};
 
-module.exports = {}
+module.exports = {};
 module.exports.ItemData = ItemData;
 module.exports.AllTags = [
 // origin - usually result tags of an encounter

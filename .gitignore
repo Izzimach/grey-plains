@@ -3,4 +3,6 @@ npm-debug.log
 build/scripts/grey-plains.min.js
 *.sublime-project
 *.sublime-workspace
+*~
+
 
